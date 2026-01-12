@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Us Wrapped 2025</title>
+    <style>
+        /* --- 1. The Aesthetic --- */
+        :root {
+            --pink-bg-1: #fff0f3; 
+            --pink-bg-2: #ffccd5; 
+            --accent: #e91e63; /* Hot pink */
+            --text-main: #590d22; /* Deep red-brown */
+            --england-red: #ce1124; 
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, var(--pink-bg-1) 0%, var(--pink-bg-2) 100%);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* --- 2. The Engine (Updated for 13 Slides) --- */
+        .viewport {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide-track {
+            display: flex;
+            /* 13 Slides = 1300% width */
+            width: 1300%; 
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
+        }
+
+        .slide {
+            /* 100% / 13 = 7.6923% */
+            width: 7.692307%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* --- 3. The Glass Box Design --- */
+        .glass-box {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 30px;
+            padding: 30px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 40px rgba(233, 30, 99, 0.15);
+            width: 85%;
+            max-width: 360px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: floatBox 6s ease-in-out infinite;
+        }
+
+        @keyframes floatBox {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* --- 4. Animations --- */
+        .animate-in {
+            animation: popUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes popUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* FIXED FOOTBALL RAIN */
+        .football-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; 
+            z-index: 9999;
+            overflow: hidden;
+            display: none; 
+        }
+
+        .football {
+            position: absolute;
+            top: -10vh; 
+            font-size: 2.5rem;
+        }
+
+        @keyframes fallDown {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* --- 5. Typography & Elements --- */
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            margin: 8px 0;
+            font-weight: 500;
+        }
+
+        .highlight { color: var(--accent); font-weight: 900; }
+        .england { color: var(--england-red); font-weight: 900; }
+        
+        .big-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent);
+            text-shadow: 3px 3px 0px #fff;
+            margin: 5px 0;
+        }
+
+        .list-item {
+            background: rgba(255,255,255,0.6);
+            padding: 10px 15px;
+            border-radius: 15px;
+            margin: 5px 0;
+            width: 100%;
+            font-size: 1rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .next-btn {
+            margin-top: 20px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: none;
+            background: var(--accent);
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+            transition: transform 0.2s;
+            z-index: 20;
+        }
+        .next-btn:active { transform: scale(0.95); }
+
+        .photo-frame {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 5px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: rotate(-3deg);
+            margin-bottom: 20px;
+        }
+
+        .tap-area { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; }
+        
+        /* New Style for the Letter */
+        .letter-content {
+            text-align: left;
+            font-style: italic;
+            font-size: 1rem;
+            max-height: 300px;
+            overflow-y: auto; 
+            margin-bottom: 20px;
+            padding-right: 5px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="rain-container" class="football-container"></div>
+
+    <div class="viewport">
+        <div class="slide-track" id="track">
+
+            <div class="slide">
+                <div class="tap-area" onclick="startExperience()"></div>
+                <div class="glass-box">
+                    <h1>Wrapped 2025</h1>
+                    <p>It's been a crazy year.</p>
+                    <p>Mostly putting up with <span class="highlight">Me.</span></p>
+                    <p style="font-size: 0.8rem; margin-top: 20px; opacity: 0.6;">(Tap to start)</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="glass-box">
+                    <h1 class="animate-in">The Stats</h1>
+                    <p class="animate-in">Hours spent talking:</p>
+                    <h1 class="big-number animate-in">4,320</h1>
+                    <p class="animate-in">That's basically half a year.</p>
+                    <button class="next-btn animate-in" onclick="nextSlide()">Next &rarr;</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="glass-box">
+                    <h1>Our Activities</h1>
+                    <div style="width: 100%; text-align: left; margin-top: 10px;">
+                        <div class="list-item animate-in">🥊 1. Fighting (A lot)</div>
+                        <div class="list-item animate-in">🤪 2. Fooling around</div>
+                        <div class="list-item animate-in">😂 3. Laughing</div>
+                        <div class="list-item animate-in">🌱 4. Growing Together</div>
+                    </div>
+                    <button class="next-btn" onclick="nextSlide()">Next &rarr;</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="glass-box">
+                    <h1>The Vibe</h1>
+                    <p>If we were a graph:</p>
+                    <div style="margin: 20px 0; font-size: 2rem;">📈📉🎢</div>
+                    <p>50% Chaos.</p>
+                    <p>50% Love.</p>
+                    <p class="highlight">100% Worth it.</p>
+                    <button class="next-btn" onclick="nextSlide()">Next &rarr;</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="glass-box">
+                    <h1>The Diet</h1>
+                    <div style="display: flex; justify-content: space-around; width: 100%; margin-top: 15px;">
+                        <div style="width: 45%;">
+                            <span style="font-size: 3rem;">🍗</span>
+                            <p><strong>ME</strong></p>
+                            <p style="font-size: 0.8rem;">Chicken. Food. Gains.</p>
+                        </div>
+                        <div style="width: 1px; background: var(--accent); opacity: 0.3;"></div>
+                        <div style="width: 45%;">
+                            <span style="font-size: 3rem;">🍰</span>
+                            <p><strong>YOU</strong></p>
+                            <p style="font-size: 0.8rem;">Sugar. Dessert. Sweet things.</p>
+                        </div>
+                    </div>
+                    <button class="next-btn" onclick="nextSlide()">Next &rarr;</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="glass-box">
+                    <h1>The Arguments</h1>
+                    <p>Who usually wins?</p>
+                    <h1 class="animate-in" style="font-size: 4rem; margin: 20px 0;">YOU</h1>
+                    <p>(But only because I let you 🤫)</p>
+                    <button class="next-btn" onclick="nextSlide()">Next &rarr;</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="glass-box">
+                    <h1>Stress Levels</h1>
+                    <p>Caused by me: 100%</p>
+                    <p>Caused by University: 20%</p>
+                    <p>Caused by:</p>
+                    <h2 class="england" style="font-size: 2.5rem;">MEEE 🏴󠁧󠁢󠁥󠁮󠁧󠁿</h2>
+                    <p style="font-size: 0.9rem;">"You Dont Love ME"</p>
+                    <button class="next-btn" onclick="nextSlide()">Next &rarr;</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="glass-box">
+                    <h1>Future Garage</h1>
+                    <span style="font-size: 4rem; margin: 10px 0;">🏎️💨</span>
+                    <p><strong>Driver:</strong> Me</p>
+                    <p><strong>Passenger Princess:</strong> You 👸</p>
+                    <p style="font-size: 0.8rem;">(You control the Spotify though)</p>
+                    <button class="next-btn" onclick="nextSlide()">Next &rarr;</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="glass-box">
+                    <h1>Travel Plans</h1>
+                    <p>Current Location: <strong>Dhaka</strong> 🇧🇩</p>
+                    <p>Target Location:</p>
+                    <h2 class="highlight">THE WORLD 🌍</h2>
+                    <p>Pack your bags, we have places to be.</p>
+                    <button class="next-btn" onclick="nextSlide()">Next &rarr;</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="glass-box">
+                    <h1>The Promise</h1>
+                    <p>No matter how much we fight,</p>
+                    <p>Or how much chicken I eat,</p>
+                    <p>Or how badly Chelsea plays...</p>
+                    <p class="highlight">I'm always on your team.</p>
+                    <button class="next-btn" onclick="nextSlide()">Next &rarr;</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="glass-box">
+                    <h1>Sexy Times</h1>
+                    <span class="animate-in" style="font-size: 4rem; animation: floatBox 3s infinite;">🔥</span>
+                    
+                    <div style="background: rgba(255,255,255,0.6); padding: 15px; border-radius: 15px; margin: 15px 0; width: 100%;">
+                        <p class="animate-in" style="animation-delay: 0.1s;">😈 <strong>Making Videos</strong></p>
+                        <p class="animate-in" style="animation-delay: 0.2s;">👙 <strong>Late Night Picture Sharing</strong></p>
+                        <p class="animate-in" style="animation-delay: 0.3s;">💋 <strong>Hearing your Moans</strong></p>
+                    </div>
+
+                    <p class="highlight animate-in">10/10 Rating.</p>
+                    <button class="next-btn" onclick="nextSlide()">Next &rarr;</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="glass-box">
+                    <h1>To My Love</h1>
+                    
+                    <div class="letter-content">
+                        <p>Dear Shaon,</p>
+                        <p>Last year with you has been an adventure. I know we had ups and downs alot, but you are the best thing in my life.</p>
+                        <p>When I close my eyes I crave for you and your closeness,as I type this my heart is beats like a drum</p>
+                        <p>You are a lighthouse whenever I am lost in thought</p>
+                        <p>I felt a prediction that this is the year when everything goes well, From prayer I got the feeling and I feel it</p>
+                        <p>For 2026, my only goal is to make you happier.</p>
+                        <p>I love you so much.</p>
+                        <p>- Sahil</p>
+                        </div>
+
+                    <button class="next-btn" onclick="nextSlide()">One Last Thing &rarr;</button>
+                </div>
+            </div>
+
+            <div class="slide" id="final-slide">
+                <div class="glass-box">
+                    <h1>Top Fan</h1>
+                    <img src="us.jpg" alt="Us" class="photo-frame">
+                    <p>You're my favourite person.</p>
+                    <p>Love you ❤️⚽</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        let currentSlideIndex = 0;
+        const totalSlides = 13; // EXACTLY 13 SLIDES
+        const track = document.getElementById('track');
+        const audio = document.getElementById("bg-music");
+
+        function startExperience() {
+             if (audio.paused) {
+                audio.play().catch(e => console.log("Audio blocked"));
+            }
+            nextSlide();
+        }
+
+        function nextSlide() {
+            if (currentSlideIndex < totalSlides - 1) {
+                currentSlideIndex++;
+                // 100 divided by 13 = 7.692307
+                const translateValue = currentSlideIndex * -(100 / totalSlides);
+                track.style.transform = `translateX(${translateValue}%)`;
+
+                // Re-trigger animations
+                const allSlides = document.querySelectorAll('.slide');
+                const nextSlideElements = allSlides[currentSlideIndex].querySelectorAll('.animate-in');
+                nextSlideElements.forEach(el => {
+                    el.style.animation = 'none';
+                    el.offsetHeight; 
+                    el.style.animation = null; 
+                });
+
+                // Trigger footballs ONLY on last slide (Index 12)
+                if (currentSlideIndex === totalSlides - 1) {
+                    setTimeout(startFootballRain, 500);
+                }
+            }
+        }
+
+        function startFootballRain() {
+            const container = document.getElementById('rain-container');
+            container.style.display = 'block'; 
+
+            const numberOfBalls = 50; 
+
+            for (let i = 0; i < numberOfBalls; i++) {
+                const ball = document.createElement('div');
+                ball.classList.add('football');
+                ball.innerHTML = '⚽';
+                
+                const randomLeft = Math.random() * 100; 
+                const randomDuration = Math.random() * 3 + 2; 
+                const randomDelay = Math.random() * 3; 
+
+                ball.style.left = randomLeft + '%';
+                ball.style.animation = `fallDown ${randomDuration}s linear ${randomDelay}s infinite`;
+                
+                container.appendChild(ball);
+            }
+        }
+    </script>
+</body>
+</html>
